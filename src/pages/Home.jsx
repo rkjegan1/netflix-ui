@@ -54,7 +54,7 @@ function Home({ myList, onLike }) {
         {/* Text */}
         <div style={{ position: "relative", zIndex: 2 }}>
           <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>
-            Welcome Back {currentUser?.username} 👋
+            Welcome Back {currentUser?.username} 
           </h1>
           <p style={{ color: "#aaa" }}>
             Explore movies across categories

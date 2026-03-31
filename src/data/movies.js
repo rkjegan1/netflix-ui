@@ -36,7 +36,7 @@ const movies = [
     title: "Avengers",
     category: "Action",
     rating: 8.0,
-    link:"https://www.hotstar.com/in/shows/avengers-assemble/1260014891?search_query=avengers",
+    link:"https://www.hotstar.com/in/movies/marvels-the-avengers/1660000015?search_query=avengers",
     image: "https://tse1.mm.bing.net/th/id/OIP.V1IuV7C-1_kNnIr2bPC7ngHaEK?pid=Api&P=0&h=180"
   },
   {

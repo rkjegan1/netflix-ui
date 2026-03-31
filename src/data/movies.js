@@ -172,143 +172,128 @@ const movies = [
     title: "Demon Slayer",
     category: "Anime",
     rating: 8.7,
-    image: "https://tse4.mm.bing.net/th/id/OIP.y2c5z7x9p1k4m6v8w3r0qAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse2.mm.bing.net/th/id/OIP.lq9VzzTRaUktAhOXvmLUtAHaEK?pid=Api&P=0&h=180"
   },
 
-  // 🎭 MISC
   {
     id: 25,
     title: "Fight Club",
     category: "Drama",
     rating: 8.8,
-    image: "https://tse4.mm.bing.net/th/id/OIP.w1e2r3t4y5u6i7o8p9a0sAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse3.mm.bing.net/th/id/OIP.Yt1kUfWD4lgIpuQdnW_ZvAHaE8?pid=Api&P=0&h=180"
   },
   {
     id: 26,
     title: "The Irishman",
     category: "Drama",
     rating: 7.8,
-    image: "https://tse2.mm.bing.net/th/id/OIP.p0o9i8u7y6t5r4e3w2q1aAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse2.mm.bing.net/th/id/OIP.lbcu0EIXRmd4XmZS34E8BQHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 27,
     title: "Bird Box",
     category: "Thriller",
     rating: 6.6,
-    image: "https://tse1.mm.bing.net/th/id/OIP.a1s2d3f4g5h6j7k8l9z0xAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.TVxfnMosjtZZ8vJiF96z0wHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 28,
-    title: "Enola Holmes",
+    title: "Enola Holmes 2",
     category: "Drama",
     rating: 6.6,
-    image: "https://tse4.mm.bing.net/th/id/OIP.l1k2j3h4g5f6d7s8a9p0oAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse3.mm.bing.net/th/id/OIP.JOuhnfseEjjWel-8RRwizgHaEK?pid=Api&P=0&h=180"
   },
 {
   id: 29,
   title: "Squid Game",
   category: "Trending",
   rating: 8.0,
-  image: "https://tse3.mm.bing.net/th/id/OIP.3z0kXr1qv0w6zYFZ9zvW7gHaEK?pid=Api&P=0&h=180"
+  image: "https://tse1.mm.bing.net/th/id/OIP.h61ZleX_IXWKtRs5fSvcUAHaD5?pid=Api&P=0&h=180"
 },
 {
   id: 30,
   title: "Lucifer",
   category: "Trending",
   rating: 8.1,
-  image: "https://tse2.mm.bing.net/th/id/OIP.yY2i0s2P4f7z5nZ9Z3pV2wHaEK?pid=Api&P=0&h=180"
+  image: "https://tse1.mm.bing.net/th/id/OIP.w-lgk60EtYcimaHSqTI52gHaEK?pid=Api&P=0&h=180"
 },
 {
   id: 31,
   title: "The Dark Knight",
   category: "Action",
   rating: 9.0,
-  image: "https://tse2.mm.bing.net/th/id/OIP.s3d4f5g6h7j8k9l0z1x2cAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse3.mm.bing.net/th/id/OIP.-62L5CW4zMKurUEA64TJ4gHaFj?pid=Api&P=0&h=180"
 },
 {
   id: 32,
   title: "Mad Max Fury Road",
   category: "Action",
   rating: 8.1,
-  image: "https://tse1.mm.bing.net/th/id/OIP.yxF6r2t7k9p4x8m3v1c0qAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse4.mm.bing.net/th/id/OIP.Ftj3SyFBk6PMdX3NC6PHWQHaDa?pid=Api&P=0&h=180"
 },
 {
   id: 33,
   title: "Gladiator",
   category: "Action",
   rating: 8.5,
-  image: "https://tse3.mm.bing.net/th/id/OIP.n2c4v6b8m0k1l3j5h7g9fAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse1.mm.bing.net/th/id/OIP.3X94Lg8Rl0u-xQcVKw-X2QHaEK?pid=Api&P=0&h=180"
 },
 {
   id: 34,
   title: "The Big Bang Theory",
   category: "Comedy",
   rating: 8.1,
-  image: "https://tse2.mm.bing.net/th/id/OIP.q1w2e3r4t5y6u7i8o9p0aAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse1.mm.bing.net/th/id/OIP.pPzaw0Cp1aVnafXVtrShIgHaEo?pid=Api&P=0&h=180"
 },
 {
   id: 35,
   title: "How I Met Your Mother",
   category: "Comedy",
   rating: 8.3,
-  image: "https://tse4.mm.bing.net/th/id/OIP.l3k5j7h9g1f2d4s6a8p0oAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse4.mm.bing.net/th/id/OIP.HyDbjCx9ns_u4bk3qAkw_AHaEK?pid=Api&P=0&h=180"
 },
 {
   id: 36,
   title: "Jujutsu Kaisen",
   category: "Anime",
   rating: 8.6,
-  image: "https://tse1.mm.bing.net/th/id/OIP.m4x7z9p3k1c8v5y2w6r0qAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse4.mm.bing.net/th/id/OIP.xe2JUNLactt0YX9Eov1FpQHaEO?pid=Api&P=0&h=180"
 },
 {
   id: 37,
   title: "Tokyo Revengers",
   category: "Anime",
   rating: 7.9,
-  image: "https://tse3.mm.bing.net/th/id/OIP.j8k6l4m2n0b9v7c5x3z1qAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse1.mm.bing.net/th/id/OIP.sjeEeUtEgg0HV6FJFMQCCwHaEK?pid=Api&P=0&h=180"
 },
 {
   id: 38,
   title: "Blade Runner 2049",
   category: "Sci-Fi",
   rating: 8.0,
-  image: "https://tse2.mm.bing.net/th/id/OIP.b4n6m8v0c2x3z5a7s9d1fAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse3.mm.bing.net/th/id/OIP.f29nOQeXS__bo5Q0nSJTJwHaEn?pid=Api&P=0&h=180"
 },
 {
   id: 39,
   title: "The Matrix",
   category: "Sci-Fi",
   rating: 8.7,
-  image: "https://tse4.mm.bing.net/th/id/OIP.r1t2y3u4i5o6p7a8s9d0fAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse1.mm.bing.net/th/id/OIP.6p6gwW5M7RMPkGiSus6YPgHaEc?pid=Api&P=0&h=180"
 },
 {
   id: 40,
   title: "Forrest Gump",
   category: "Drama",
   rating: 8.8,
-  image: "https://tse3.mm.bing.net/th/id/OIP.x1c2v3b4n5m6k7j8h9g0fAHaEK?pid=Api&P=0&h=180"
-},
-{
-  id: 41,
-  title: "The Social Network",
-  category: "Drama",
-  rating: 7.7,
-  image: "https://tse2.mm.bing.net/th/id/OIP.z1x2c3v4b5n6m7k8j9h0gAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse1.mm.bing.net/th/id/OIP.HoKHskMytWzPzoQcdzbwSAHaEK?pid=Api&P=0&h=180"
 },
 
-{
-  id: 42,
-  title: "Gone Girl",
-  category: "Thriller",
-  rating: 8.1,
-  image: "https://tse1.mm.bing.net/th/id/OIP.a9s8d7f6g5h4j3k2l1z0xAHaEK?pid=Api&P=0&h=180"
-},
 {
   id: 43,
   title: "Prisoners",
   category: "Thriller",
   rating: 8.1,
-  image: "https://tse4.mm.bing.net/th/id/OIP.q9w8e7r6t5y4u3i2o1p0aAHaEK?pid=Api&P=0&h=180"
+  image: "https://tse3.mm.bing.net/th/id/OIP.DT0NvA3wgy5-qW56qGbKaQHaEK?pid=Api&P=0&h=180"
 },
 ];
 

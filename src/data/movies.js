@@ -13,31 +13,29 @@ const movies = [
     title: "Dark",
     category: "Sci-Fi",
     rating: 8.7,
-    image: "https://tse1.mm.bing.net/th/id/OIP.R0cE5qHkK0xP0FQ8ZQqXcAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse1.mm.bing.net/th/id/OIP.S3FMXqsR1528DGJ5mLFDjAHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 3,
     title: "The Witcher",
     category: "Fantasy",
     rating: 8.0,
-    image: "https://tse2.mm.bing.net/th/id/OIP.K7nH7pZg5F4kP9uJ3mYvXgHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.SQJIMi0rfLJNBe7AbWAfWwHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 4,
     title: "Black Mirror",
     category: "Sci-Fi",
     rating: 8.7,
-    image: "https://tse1.mm.bing.net/th/id/OIP.F3cFv1F6z9k0Q3m7h4uQ2QHaEK?pid=Api&P=0&h=180"
+    image: "https://tse2.mm.bing.net/th/id/OIP.1FNm3eMsOYDuMAWTzY916gHaEk?pid=Api&P=0&h=180"
   },
   {
     id: 5,
     title: "Money Heist",
     category: "Crime",
     rating: 8.2,
-    image: "https://tse4.mm.bing.net/th/id/OIP.9rS5lZlG9C3cWc4kN9EwHQHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.rxp_SXDZm6XBBsL_4ImqeAHaEK?pid=Api&P=0&h=180"
   },
-
-  // 🎭 DRAMA / CRIME
   {
     id: 6,
     title: "Breaking Bad",
@@ -50,31 +48,30 @@ const movies = [
     title: "Peaky Blinders",
     category: "Crime",
     rating: 8.8,
-    image: "https://tse3.mm.bing.net/th/id/OIP.EzU4v1V4G8t7MZQw8z8sLQHaEK?pid=Api&P=0&h=180"
+    image: "https://tse3.mm.bing.net/th/id/OIP.7XC02UHjAlJz3cxhoQ_g4AHaFj?pid=Api&P=0&h=180"
   },
   {
     id: 8,
     title: "Narcos",
     category: "Crime",
     rating: 8.8,
-    image: "https://tse4.mm.bing.net/th/id/OIP.xRZ0s0o7rZ7g5yJ2o6Yx0wHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.4aWBON2k9Nb3xBKedDqw3wHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 9,
     title: "Ozark",
     category: "Drama",
     rating: 8.5,
-    image: "https://tse3.mm.bing.net/th/id/OIP.P5y7W3o9k0s8g2y6m4uX0wHaEK?pid=Api&P=0&h=180"
+    image: "https://tse1.mm.bing.net/th/id/OIP.mhen_TBkOnry4Utgc-jt4gHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 10,
     title: "The Crown",
     category: "Drama",
     rating: 8.6,
-    image: "https://tse4.mm.bing.net/th/id/OIP.f1vX3nQ7k1c6b5s8lXwY6QHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.BWZELlMOK7VPkmEc4gcL-AHaEK?pid=Api&P=0&h=180"
   },
 
-  // 😂 COMEDY
   {
     id: 11,
     title: "The Office",
@@ -87,14 +84,14 @@ const movies = [
     title: "Brooklyn Nine-Nine",
     category: "Comedy",
     rating: 8.4,
-    image: "https://tse4.mm.bing.net/th/id/OIP.Wz7YgQx3Yk2l9p8n7c6b5QHaEK?pid=Api&P=0&h=180"
+    image: "https://tse2.mm.bing.net/th/id/OIP.cXtILW3_C2CbCbdu7dFATgHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 13,
     title: "Friends",
     category: "Comedy",
     rating: 8.9,
-    image: "https://tse2.mm.bing.net/th/id/OIP.7p8q9r0s1t2u3v4w5x6y7QHaEK?pid=Api&P=0&h=180"
+    image: "https://tse2.mm.bing.net/th/id/OIP.fFYxlMgx1UmJCmVOQfaSwAHaEK?pid=Api&P=0&h=180"
   },
 
   // 🔫 ACTION
@@ -117,62 +114,58 @@ const movies = [
     title: "Extraction",
     category: "Action",
     rating: 6.8,
-    image: "https://tse2.mm.bing.net/th/id/OIP.Y8q5x4r8y0c7n3k5z9l2wQHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.seDvPvDXjJE2onpz5yyecgHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 17,
     title: "Red Notice",
     category: "Action",
     rating: 6.3,
-    image: "https://tse3.mm.bing.net/th/id/OIP.k4m9x2z7p1c8v5b3y6w0qAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse3.mm.bing.net/th/id/OIP.YDhD5PYxcvIJ6QLhw3YCBAHaEK?pid=Api&P=0&h=180"
   },
-
-  // 🚀 SCI-FI
   {
     id: 18,
     title: "Interstellar",
     category: "Sci-Fi",
     rating: 8.6,
-    image: "https://tse3.mm.bing.net/th/id/OIP.Lz5r7c8k9m1v2x3y4w0qAHaEK?pid=Api&P=0&h=180"
+    image: "https://image.tmdb.org/t/p/w1280/djS3XxneEFjCM6VlCiuuN8QavE6.jpg"
   },
   {
     id: 19,
     title: "Inception",
     category: "Sci-Fi",
     rating: 8.8,
-    image: "https://tse1.mm.bing.net/th/id/OIP.q4w5e6r7t8y9u0i1o2p3aAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse2.mm.bing.net/th/id/OIP.07JtZAHeB63sMlMmC3DT-wHaEo?pid=Api&P=0&h=180"
   },
 
-  // 🧠 THRILLER
   {
     id: 20,
     title: "Shutter Island",
     category: "Thriller",
     rating: 8.2,
-    image: "https://tse3.mm.bing.net/th/id/OIP.z9x8c7v6b5n4m3k2j1h0gAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.0b_q6KKhu_-xoqHVGDUqOgHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 21,
     title: "The Platform",
     category: "Thriller",
     rating: 7.0,
-    image: "https://tse3.mm.bing.net/th/id/OIP.m1n2b3v4c5x6z7a8s9d0fAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse3.mm.bing.net/th/id/OIP.CEguVp0DC52rFzDkJA1xkwHaEK?pid=Api&P=0&h=180"
   },
 
-  // 🎌 ANIME
   {
     id: 22,
     title: "Death Note",
     category: "Anime",
     rating: 9.0,
-    image: "https://tse2.mm.bing.net/th/id/OIP.k2m9x3z7y1c8v5b4p6w0qAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse2.mm.bing.net/th/id/OIP.RWB6__JVTSAIdXG5ayEKkwHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 23,
     title: "Attack on Titan",
     category: "Anime",
     rating: 9.1,
-    image: "https://tse3.mm.bing.net/th/id/OIP.x8z3p5k4m7v6c2y9w1r0qAHaEK?pid=Api&P=0&h=180"
+    image: "https://tse4.mm.bing.net/th/id/OIP.l8kdR8PHy_q2l2X5Ev4L7gHaEK?pid=Api&P=0&h=180"
   },
   {
     id: 24,
@@ -302,6 +295,7 @@ const movies = [
   rating: 7.7,
   image: "https://tse2.mm.bing.net/th/id/OIP.z1x2c3v4b5n6m7k8j9h0gAHaEK?pid=Api&P=0&h=180"
 },
+
 {
   id: 42,
   title: "Gone Girl",

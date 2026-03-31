@@ -9,6 +9,16 @@ function Row({ title, movies, onSelect, onLike }) {
         zIndex: 1,
       }}
     >
+      <div
+  className="row-scroll"
+  style={{
+    display: "flex",
+    overflowX: "auto",
+    gap: "15px",
+    padding: "10px 20px",
+    scrollBehavior: "smooth",
+  }}
+></div>
       {/* Title */}
       <h3
         style={{

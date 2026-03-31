@@ -7,7 +7,14 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (username === "jegan" && password === "1234") {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const validUser = users.find(
+      (u) => u.username === username && u.password === password
+    );
+
+    if (validUser) {
+      localStorage.setItem("currentUser", JSON.stringify(validUser));
       navigate("/home");
     } else {
       alert("Invalid credentials");
@@ -26,6 +33,7 @@ function Login() {
         position: "relative",
       }}
     >
+      {/* DARK OVERLAY */}
       <div
         style={{
           position: "absolute",
@@ -37,6 +45,7 @@ function Login() {
         }}
       ></div>
 
+      {/* LOGIN CARD */}
       <div
         style={{
           position: "relative",
@@ -142,10 +151,11 @@ function Login() {
               marginTop: "15px",
               fontSize: "12px",
               color: "#aaa",
+              cursor: "pointer",
             }}
+            onClick={() => navigate("/signup")}
           >
             Don't have an account? Sign up now.
-
           </p>
         </div>
       </div>

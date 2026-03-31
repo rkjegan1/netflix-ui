@@ -5,7 +5,7 @@ const movies = [
     title: "Stranger Things",
     category: "Trending",
     rating: 8.7,
-    link: "https://flixhd.cc/watch-tv/watch-stranger-things-full-39444.4874236",
+    link: "https://www.netflix.com/watch/81599029?trackId=14170035",
     image: "https://tse4.mm.bing.net/th/id/OIP.m_4MTvgjdi1NTdbIwASd_gHaEK?pid=Api&P=0&h=180"
   },
   {

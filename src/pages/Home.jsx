@@ -4,18 +4,12 @@ import Navbar from "../components/Navbar";
 import Row from "../components/Row";
 
 function Home({ myList, onLike }) {
-  const [selected, setSelected] = useState(null);
   const [ratingFilter, setRatingFilter] = useState(0);
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-  const trending = movies.filter(
-    (m) => m.category === "Trending" && m.rating >= ratingFilter
-  );
-
-  const action = movies.filter(
-    (m) => m.category === "Action" && m.rating >= ratingFilter
-  );
+  // 🔥 Get all unique categories dynamically
+  const categories = [...new Set(movies.map((m) => m.category))];
 
   return (
     <div
@@ -33,7 +27,7 @@ function Home({ myList, onLike }) {
       {/* NAVBAR */}
       <Navbar myList={myList} />
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <div
         style={{
           height: "60vh",
@@ -47,6 +41,7 @@ function Home({ myList, onLike }) {
           padding: "40px",
         }}
       >
+        {/* Overlay */}
         <div
           style={{
             position: "absolute",
@@ -56,12 +51,13 @@ function Home({ myList, onLike }) {
           }}
         />
 
+        {/* Text */}
         <div style={{ position: "relative", zIndex: 2 }}>
           <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>
             Welcome Back {currentUser?.username} 👋
           </h1>
           <p style={{ color: "#aaa" }}>
-            Continue watching your favorites
+            Explore movies across categories
           </p>
         </div>
       </div>
@@ -86,21 +82,24 @@ function Home({ myList, onLike }) {
         </select>
       </div>
 
-      {/* CONTENT */}
+      {/* 🔥 DYNAMIC CATEGORY ROWS */}
       <div style={{ marginTop: "10px" }}>
-        <Row
-          title="Trending"
-          movies={trending}
-          onSelect={setSelected}
-          onLike={onLike}
-        />
+        {categories.map((category) => {
+          const filteredMovies = movies.filter(
+            (m) => m.category === category && m.rating >= ratingFilter
+          );
 
-        <Row
-          title="Action"
-          movies={action}
-          onSelect={setSelected}
-          onLike={onLike}
-        />
+          if (filteredMovies.length === 0) return null;
+
+          return (
+            <Row
+              key={category}
+              title={category}
+              movies={filteredMovies}
+              onLike={onLike}
+            />
+          );
+        })}
       </div>
     </div>
   );

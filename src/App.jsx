@@ -15,16 +15,26 @@ function ProtectedRoute({ children }) {
 function App() {
   const [myList, setMyList] = useState([]);
 
-  // ✅ Load saved list from localStorage
-  useEffect(() => {
-    const savedList = JSON.parse(localStorage.getItem("myList")) || [];
-    setMyList(savedList);
-  }, []);
+  // 🔑 Get current user
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const storageKey = currentUser
+    ? `myList_${currentUser.username}`
+    : null;
 
-  // ✅ Save list whenever it changes
+  // ✅ Load user-specific list
   useEffect(() => {
-    localStorage.setItem("myList", JSON.stringify(myList));
-  }, [myList]);
+    if (storageKey) {
+      const savedList = JSON.parse(localStorage.getItem(storageKey)) || [];
+      setMyList(savedList);
+    }
+  }, [storageKey]);
+
+  // ✅ Save user-specific list
+  useEffect(() => {
+    if (storageKey) {
+      localStorage.setItem(storageKey, JSON.stringify(myList));
+    }
+  }, [myList, storageKey]);
 
   const toggleList = (movie) => {
     if (myList.find((m) => m.id === movie.id)) {
@@ -37,11 +47,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Auth Routes */}
+        {/* Auth */}
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* Protected Routes */}
+        {/* Protected */}
         <Route
           path="/home"
           element={

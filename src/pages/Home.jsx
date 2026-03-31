@@ -2,7 +2,7 @@ import { useState } from "react";
 import movies from "../data/movies";
 import Navbar from "../components/Navbar";
 import Row from "../components/Row";
-
+console.log([...new Set(movies.map(m => m.category))]);
 function Home({ myList, onLike }) {
   const [ratingFilter, setRatingFilter] = useState(0);
 

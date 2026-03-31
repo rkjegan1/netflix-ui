@@ -7,6 +7,8 @@ function Home({ myList, onLike }) {
   const [selected, setSelected] = useState(null);
   const [ratingFilter, setRatingFilter] = useState(0);
 
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
   const trending = movies.filter(
     (m) => m.category === "Trending" && m.rating >= ratingFilter
   );
@@ -21,17 +23,17 @@ function Home({ myList, onLike }) {
         minHeight: "100vh",
         color: "#fff",
         background: `
-  radial-gradient(circle at 20% 20%, rgba(255,0,0,0.15), transparent 40%),
-  radial-gradient(circle at 80% 0%, rgba(104,16,237,0.15), transparent 40%),
-  radial-gradient(circle at bottom, rgba(62, 2, 87, 0.25), transparent 60%),
-  linear-gradient(to bottom, #0f0f0f, #000)
-`,
+          radial-gradient(circle at 20% 20%, rgba(255,0,0,0.15), transparent 40%),
+          radial-gradient(circle at 80% 0%, rgba(104,16,237,0.15), transparent 40%),
+          radial-gradient(circle at bottom, rgba(62, 2, 87, 0.25), transparent 60%),
+          linear-gradient(to bottom, #0f0f0f, #000)
+        `,
       }}
     >
       {/* NAVBAR */}
       <Navbar myList={myList} />
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <div
         style={{
           height: "60vh",
@@ -45,7 +47,6 @@ function Home({ myList, onLike }) {
           padding: "40px",
         }}
       >
-        {/* overlay */}
         <div
           style={{
             position: "absolute",
@@ -55,10 +56,9 @@ function Home({ myList, onLike }) {
           }}
         />
 
-        {/* text */}
         <div style={{ position: "relative", zIndex: 2 }}>
           <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>
-            Welcome Back 
+            Welcome Back {currentUser?.username} 👋
           </h1>
           <p style={{ color: "#aaa" }}>
             Continue watching your favorites
@@ -73,8 +73,11 @@ function Home({ myList, onLike }) {
           onChange={(e) => setRatingFilter(Number(e.target.value))}
           style={{
             marginLeft: "10px",
-            padding: "5px",
-            borderRadius: "5px",
+            padding: "6px 10px",
+            borderRadius: "6px",
+            background: "#222",
+            color: "#fff",
+            border: "1px solid #444",
           }}
         >
           <option value="0">All</option>
@@ -84,7 +87,7 @@ function Home({ myList, onLike }) {
       </div>
 
       {/* CONTENT */}
-      <div style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: "10px" }}>
         <Row
           title="Trending"
           movies={trending}

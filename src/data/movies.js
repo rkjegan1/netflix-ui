@@ -13,6 +13,7 @@ const movies = [
     title: "Dark",
     category: "Sci-Fi",
     rating: 8.7,
+    link:"https://www.netflix.com/watch/80114790?trackId=284616272&tctx=0%2C0%2C81617e86-3029-4cdd-b966-6e9259095bff%2C81617e86-3029-4cdd-b966-6e9259095bff%7C%3DeyJwYWdlSWQiOiIxYTBjYzVlNi01YjNhLTQxNWQtODNkMy01OWUyNjYwNGJkOGEvMS8vZGFyay8wLzAiLCJsb2NhbFNlY3Rpb25JZCI6IjIifQ%3D%3D%2C%2C%2C%2C%2C%2CVideo%3A80100172%2CdetailsPagePlayButton",
     image: "https://tse1.mm.bing.net/th/id/OIP.S3FMXqsR1528DGJ5mLFDjAHaEK?pid=Api&P=0&h=180"
   },
   {
@@ -27,6 +28,7 @@ const movies = [
     title: "Black Mirror",
     category: "Sci-Fi",
     rating: 8.7,
+    link:"https://www.netflix.com/watch/81716301?trackId=284616272",
     image: "https://tse2.mm.bing.net/th/id/OIP.1FNm3eMsOYDuMAWTzY916gHaEk?pid=Api&P=0&h=180"
   },
   {
@@ -77,6 +79,7 @@ const movies = [
     title: "The Office",
     category: "Comedy",
     rating: 8.8,
+    link:"https://www.netflix.com/watch/70069638?trackId=14170287&tctx=2%2C0%2C465f7877-5097-4bad-a921-9ab5d0193ee9-389093682%2CNES_F9092986C8A7BB128023630323A502-994911DC4F528C-659C691187_p_1775368520296%2C%2C%2C%2C%2C%2CVideo%3A70136120%2CdetailsPagePlayButton",
     image: "https://tse3.mm.bing.net/th/id/OIP.U-c4u1orbJVeuqI0k4aIwAHaEK?pid=Api&P=0&h=180"
   },
   {
@@ -94,7 +97,6 @@ const movies = [
     image: "https://tse2.mm.bing.net/th/id/OIP.fFYxlMgx1UmJCmVOQfaSwAHaEK?pid=Api&P=0&h=180"
   },
 
-  // 🔫 ACTION
   {
     id: 14,
     title: "Avengers",
@@ -128,6 +130,7 @@ const movies = [
     title: "Interstellar",
     category: "Sci-Fi",
     rating: 8.6,
+    link:"https://www.hotstar.com/in/paywall?content_id=1971000531&content_title=Interstellar&content_type=MOVIE&entitlement_failed_context=Cglob2xseXdvb2QKBHBhaWQKA3ZpcBIDd2Vi&is_content_paid=true&search_query=interstellar&source=content&user_status=guest",
     image: "https://image.tmdb.org/t/p/w1280/djS3XxneEFjCM6VlCiuuN8QavE6.jpg"
   },
   {
@@ -208,6 +211,7 @@ const movies = [
   title: "Squid Game",
   category: "Trending",
   rating: 8.0,
+  link:"https://www.netflix.com/watch/81262746?trackId=284616272",
   image: "https://tse1.mm.bing.net/th/id/OIP.h61ZleX_IXWKtRs5fSvcUAHaD5?pid=Api&P=0&h=180"
 },
 {
@@ -215,6 +219,7 @@ const movies = [
   title: "Lucifer",
   category: "Trending",
   rating: 8.1,
+  link:"https://www.netflix.com/watch/80138256?trackId=284616272&tctx=0%2C0%2C38d18ce3-5c55-4b60-aabd-ec4439e66190%2C38d18ce3-5c55-4b60-aabd-ec4439e66190%7C%3DeyJwYWdlSWQiOiI5Yzg1MmI5Zi02OWYwLTQwMTUtYTkwOC05ZGU1Yzg2MGU3YTEvMS8vbHVjaS8wLzAiLCJsb2NhbFNlY3Rpb25JZCI6IjIifQ%3D%3D%2C%2C%2C%2CtitlesResults%2C%2CVideo%3A80057918%2CdetailsPagePlayButton",
   image: "https://tse1.mm.bing.net/th/id/OIP.w-lgk60EtYcimaHSqTI52gHaEK?pid=Api&P=0&h=180"
 },
 {

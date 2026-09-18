@@ -5,29 +5,27 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import MyList from "./pages/MyList";
+import { hasSession } from "./api/auth";
 
 // 🔐 Protected Route
 function ProtectedRoute({ children }) {
-  const user = localStorage.getItem("currentUser");
-  return user ? children : <Navigate to="/" />;
+  return hasSession() ? children : <Navigate to="/" replace />;
 }
 
 function App() {
-  const [myList, setMyList] = useState([]);
+  const [myList, setMyList] = useState(() => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (!currentUser) return [];
+    return JSON.parse(localStorage.getItem(`myList_${currentUser.username}`)) || [];
+  });
 
-  // 🔑 Get current user
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  const storageKey = currentUser
-    ? `myList_${currentUser.username}`
-    : null;
+  const storageKey = currentUser ? `myList_${currentUser.username}` : null;
 
-  // ✅ Load user-specific list
-  useEffect(() => {
-    if (storageKey) {
-      const savedList = JSON.parse(localStorage.getItem(storageKey)) || [];
-      setMyList(savedList);
-    }
-  }, [storageKey]);
+  const loadUserList = (user) => {
+    const savedList = JSON.parse(localStorage.getItem(`myList_${user.username}`)) || [];
+    setMyList(savedList);
+  };
 
   // ✅ Save user-specific list
   useEffect(() => {
@@ -48,7 +46,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Auth */}
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login onAuthenticated={loadUserList} />} />
         <Route path="/signup" element={<Signup />} />
 
         {/* Protected */}

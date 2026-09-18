@@ -26,6 +26,12 @@ html, body, #root {
 body {
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* BUTTONS */

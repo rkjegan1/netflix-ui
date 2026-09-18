@@ -1,31 +1,26 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signUp } from "../api/auth";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = () => {
-    if (!username || !password) {
-      alert("Fill all fields");
-      return;
+  const handleSignup = async () => {
+    setError("");
+    setIsSubmitting(true);
+
+    try {
+      await signUp(username, password);
+      navigate("/", { state: { message: "Account created. Please sign in." } });
+    } catch (signupError) {
+      setError(signupError.message);
+    } finally {
+      setIsSubmitting(false);
     }
-
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-
-    const userExists = users.find((u) => u.username === username);
-
-    if (userExists) {
-      alert("User already exists");
-      return;
-    }
-
-    users.push({ username, password });
-    localStorage.setItem("users", JSON.stringify(users));
-
-    alert("Account created!");
-    navigate("/");
   };
 
   return (
@@ -35,6 +30,7 @@ function Signup() {
 
         <input
           placeholder="Username"
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
           style={inputStyle}
         />
@@ -42,13 +38,15 @@ function Signup() {
         <input
           type="password"
           placeholder="Password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
           style={inputStyle}
         />
 
-        <button onClick={handleSignup} style={buttonStyle}>
-          Create Account
+        <button onClick={handleSignup} style={buttonStyle} disabled={isSubmitting}>
+          {isSubmitting ? "Creating…" : "Create Account"}
         </button>
+        {error && <p style={{ color: "#ff8585", marginTop: "12px", maxWidth: "280px" }}>{error}</p>}
       </div>
     </div>
   );

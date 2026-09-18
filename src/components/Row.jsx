@@ -4,21 +4,11 @@ function Row({ title, movies, onSelect, onLike }) {
   return (
     <div
       style={{
-        marginBottom: "10px",
+        marginBottom: "0",
         position: "relative", 
         zIndex: 1,
       }}
     >
-      <div
-  className="row-scroll"
-  style={{
-    display: "flex",
-    overflowX: "auto",
-    gap: "15px",
-    padding: "10px 20px",
-    scrollBehavior: "smooth",
-  }}
-></div>
       {/* Title */}
       <h3
         style={{
@@ -32,12 +22,13 @@ function Row({ title, movies, onSelect, onLike }) {
 
       {/* Scroll Container */}
       <div
+        className="row-scroll"
         style={{
           display: "flex",
           overflowX: "auto",
           overflowY: "visible", 
           gap: "20px",
-          padding: "60px 20px", 
+          padding: "36px 20px 40px",
           scrollBehavior: "smooth",
         }}
       >

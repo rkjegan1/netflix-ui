@@ -1,16 +1,44 @@
-# React + Vite
+# NotNetflix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The app includes a local authentication API. Users are saved to `backend/data/users.json`; passwords are salted and hashed with Node's `scrypt`, so plaintext passwords are never written to disk.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+In one terminal, start the API:
 
-## React Compiler
+```bash
+npm run api
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+In a second terminal, start the Vite frontend:
 
-## Expanding the ESLint configuration
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Vite forwards `/api` requests to `http://localhost:4000`. Create an account from the signup screen and then sign in.
+
+To run the built application and API together, build first and then start the server:
+
+```bash
+npm run build
+npm start
+```
+
+The API exposes signup, login, logout, and current-user endpoints. Login sessions expire after seven days or when the API server restarts.
+
+## Live TMDB catalogue
+
+The home page can load live Popular, Now Playing, Top Rated, and Coming Soon movie rows from TMDB. The access token is used only by the backend and is never sent to the browser.
+
+1. Create a free TMDB account and copy the **API Read Access Token** from [TMDB API settings](https://www.themoviedb.org/settings/api).
+2. Copy `.env.example` to a new `.env` file in the project root.
+3. Replace the placeholder value in `.env` with your token:
+
+   ```env
+   TMDB_ACCESS_TOKEN=your_token_here
+   ```
+
+4. Restart `npm run api`.
+
+Without a token, the app keeps working and displays the local catalogue instead.

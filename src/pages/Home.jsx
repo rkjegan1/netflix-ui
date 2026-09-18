@@ -1,27 +1,49 @@
-import { useState } from "react";
-import movies from "../data/movies";
+import { useEffect, useState } from "react";
+import fallbackMovies from "../data/movies";
 import Navbar from "../components/Navbar";
 import Row from "../components/Row";
-console.log([...new Set(movies.map(m => m.category))]);
+
 function Home({ myList, onLike }) {
   const [ratingFilter, setRatingFilter] = useState(0);
+  const [movieRows, setMovieRows] = useState([]);
+  const [catalogueMessage, setCatalogueMessage] = useState("");
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-  // 🔥 Get all unique categories dynamically
-  const categories = [...new Set(movies.map((m) => m.category))];
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/api/movies")
+      .then(async (response) => {
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Unable to load the catalogue.");
+        return data.categories;
+      })
+      .then((categories) => {
+        if (isActive) setMovieRows(categories);
+      })
+      .catch((error) => {
+        if (!isActive) return;
+        const categories = Object.entries(
+          fallbackMovies.reduce((rows, movie) => {
+            rows[movie.category] = [...(rows[movie.category] || []), movie];
+            return rows;
+          }, {}),
+        ).map(([title, movies]) => ({ title, movies }));
+        setMovieRows(categories);
+        setCatalogueMessage(`${error.message} Showing the local collection instead.`);
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
 
   return (
-    <div
+    <div className="cosmic-page"
       style={{
         minHeight: "100vh",
         color: "#fff",
-        background: `
-          radial-gradient(circle at 20% 20%, rgba(255,0,0,0.15), transparent 40%),
-          radial-gradient(circle at 80% 0%, rgba(104,16,237,0.15), transparent 40%),
-          radial-gradient(circle at bottom, rgba(62, 2, 87, 0.25), transparent 60%),
-          linear-gradient(to bottom, #0f0f0f, #000)
-        `,
       }}
     >
       {/* NAVBAR */}
@@ -80,21 +102,26 @@ function Home({ myList, onLike }) {
           <option value="8">8+</option>
           <option value="9">9+</option>
         </select>
+        {catalogueMessage && (
+          <p style={{ color: "#d7c5ff", fontSize: "13px", marginTop: "10px" }}>
+            {catalogueMessage}
+          </p>
+        )}
       </div>
 
       {/* 🔥 DYNAMIC CATEGORY ROWS */}
       <div style={{ marginTop: "10px" }}>
-        {categories.map((category) => {
-          const filteredMovies = movies.filter(
-            (m) => m.category === category && m.rating >= ratingFilter
+        {movieRows.map((row) => {
+          const filteredMovies = row.movies.filter(
+            (movie) => movie.rating >= ratingFilter
           );
 
           if (filteredMovies.length === 0) return null;
 
           return (
             <Row
-              key={category}
-              title={category}
+              key={row.title}
+              title={row.title}
               movies={filteredMovies}
               onLike={onLike}
             />

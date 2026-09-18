@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "api": "node --env-file-if-exists=.env backend/server.js",
     "dev": "vite",
     "build": "vite build",
+    "start": "node --env-file-if-exists=.env backend/server.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -1,23 +1,27 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { signIn } from "../api/auth";
 
-function Login() {
+function Login({ onAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleLogin = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+  const handleLogin = async () => {
+    setError("");
+    setIsSubmitting(true);
 
-    const validUser = users.find(
-      (u) => u.username === username && u.password === password
-    );
-
-    if (validUser) {
-      localStorage.setItem("currentUser", JSON.stringify(validUser));
+    try {
+      const user = await signIn(username, password);
+      onAuthenticated(user);
       navigate("/home");
-    } else {
-      alert("Invalid credentials");
+    } catch (loginError) {
+      setError(loginError.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -92,6 +96,7 @@ function Login() {
           <input
             type="text"
             placeholder="Username"
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
             style={{
               width: "100%",
@@ -108,6 +113,7 @@ function Login() {
           <input
             type="password"
             placeholder="Password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={{
               width: "100%",
@@ -123,6 +129,7 @@ function Login() {
 
           <button
             onClick={handleLogin}
+            disabled={isSubmitting}
             style={{
               width: "100%",
               padding: "12px",
@@ -143,8 +150,20 @@ function Login() {
                 "linear-gradient(90deg, #ff0000, #e50914)")
             }
           >
-            Sign In
+            {isSubmitting ? "Signing in…" : "Sign In"}
           </button>
+
+          {error && (
+            <p style={{ color: "#ff8585", fontSize: "13px", marginTop: "14px" }}>
+              {error}
+            </p>
+          )}
+
+          {location.state?.message && (
+            <p style={{ color: "#8cf0af", fontSize: "13px", marginTop: "14px" }}>
+              {location.state.message}
+            </p>
+          )}
 
           <p
             style={{

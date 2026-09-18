@@ -6,14 +6,10 @@ function MyList({ myList, onLike }) {
   const navigate = useNavigate();
 
   return (
-    <div
+    <div className="cosmic-page"
       style={{
         minHeight: "100vh",
         color: "#fff",
-        background: `
-          radial-gradient(circle at 20% 20%, rgba(255,0,0,0.15), transparent 40%),
-          linear-gradient(to bottom, #0f0f0f, #000)
-        `,
       }}
     >
       <Navbar myList={myList} />

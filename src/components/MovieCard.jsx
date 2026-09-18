@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function MovieCard({ movie, onSelect, onLike }) {
+function MovieCard({ movie, onLike }) {
   const [hover, setHover] = useState(false);
 
   if (!movie) return null;
@@ -63,36 +63,34 @@ function MovieCard({ movie, onSelect, onLike }) {
             {movie.title}  ⭐ {movie.rating}
           </h3>
 
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="movie-card-actions">
             <button
-              style={{
-                background: "#7b0505",
-                borderRadius: "50%",
-                padding: "8px",
-                cursor: "pointer",
-              }}
+              className="movie-card-action movie-card-play"
+              type="button"
+              aria-label={`Play ${movie.title}`}
               onClick={() =>
                 movie.link && window.open(movie.link, "_blank")
               }
             >
-               ▶ 
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.15 5.14a1 1 0 0 1 1.53-.85l8.18 6.86a1.1 1.1 0 0 1 0 1.7l-8.18 6.86A1 1 0 0 1 8.15 19V5.14Z" />
+              </svg>
+              <span>Play</span>
             </button>
 
             <button
-              style={{
-                background: "#7b0505",
-                color: "#fff",
-                borderRadius: "50%",
-                padding: "8px",
-                cursor: "pointer",
-              }}
+              className="movie-card-action movie-card-like"
+              type="button"
+              aria-label={`Add ${movie.title} to My List`}
               onClick={() =>
                 movie.likeLink
                   ? window.open(movie.likeLink, "_blank")
                   : onLike(movie)
               }
             >
-              ❤️
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 20.25S4 15.1 4 9.48C4 6.96 5.86 5 8.26 5c1.5 0 2.94.76 3.74 2.02A4.52 4.52 0 0 1 15.74 5C18.14 5 20 6.96 20 9.48c0 5.62-8 10.77-8 10.77Z" />
+              </svg>
             </button>
           </div>
         </div>
